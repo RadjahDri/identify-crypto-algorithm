@@ -12,8 +12,6 @@ from Cryptodome.Cipher import DES3
 from Cryptodome.Cipher import Salsa20
 
 
-### Constants
-
 ### Classes
 class CustomException(Exception):
     def __init__(self, msg: str):
@@ -329,7 +327,7 @@ def addSalsa20Algs(keyData: bytearray, ivData: bytearray, isEncrypt: bool):
 
 
 
-### MAIN
+### Main
 def parseArgument():
     parser = argparse.ArgumentParser(description='identifyEncryptionAlgorithm - Encryption algorithm identifier from input and output data')
     parser.add_argument('-e', '--encryptedFilePath', help='Encrypted data file path', type=str, required=True)
@@ -379,7 +377,7 @@ def main(encryptedFilePath: str, decryptedFilePath: str, keyFilePath: str, ivFil
         for algName in matchAlgs:
             print(f"[+] \t{algName}")
     else:
-        print("[+] No algotithe match")
+        print("[+] No algotithm match")
     
     return 0
 
